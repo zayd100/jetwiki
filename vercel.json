@@ -3,13 +3,19 @@
   "builds": [
     {
       "src": "Back-end/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["Back-end/**"]
+      }
     },
     {
       "src": "Front-end/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "installCommand": "cd Front-end && npm install",
+        "buildCommand": "cd Front-end && npm run build",
+        "outputDirectory": "Front-end/dist"
       }
     }
   ],
@@ -19,8 +25,12 @@
       "dest": "Back-end/server.js"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "Front-end/dist/assets/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "Front-end/dist/$1"
+      "dest": "Front-end/dist/index.html"
     }
   ]
 }
