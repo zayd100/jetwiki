@@ -12,10 +12,10 @@
       "src": "Front-end/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
+        "distDir": "Front-end/dist", 
         "installCommand": "cd Front-end && npm install",
-        "buildCommand": "cd Front-end && npm run build",
-        "outputDirectory": "Front-end/dist"
+        "buildCommand": "cd Front-end && npm run build"
+       
       }
     }
   ],
