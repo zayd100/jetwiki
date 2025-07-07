@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 // Import all models
-const Connection = require("./models/ops");
-const Item = require("./models/item");
-const Income = require("./models/income");
-const girl = require("./models/girls");
-const news = require("./models/news");
+const Connection = require("../models/ops");
+const Item = require("../models/item");
+const Income = require("../models/income");
+const girl = require("../models/girls");
+
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -82,14 +82,7 @@ const connectionData = [
     op_status: "completed"
   }
 ];
-const newsdata = [
-    {
-      image: "-",
-      headline: "-",
-      text: "-"
-    }
-   
-  ];
+
 
     // Item data (your existing contacts/people data)
     const itemData =  [
