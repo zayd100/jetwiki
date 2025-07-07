@@ -20,7 +20,7 @@ const seedAll = async () => {
     await Item.deleteMany({});
     await Income.deleteMany({});
     await girl.deleteMany({});
-    await Income.deleteMany({});
+   
     // Connection data (your existing ops data)
 const connectionData = [
   
