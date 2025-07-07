@@ -6,28 +6,28 @@ require("dotenv").config();
 
 const app = express();
 
+
 app.use(cors({
   origin: "https://jetwiki.vercel.app",
   methods: ["GET", "POST"],
   credentials: true
 }));
 
+
 app.use(bodyParser.json());
 app.use("/images", express.static('public/images'));
+
 
 app.get("/api/test", (req, res) => {
   res.json({ message: "Backend is working!" });
 });
 
+
 async function startServer() {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
+    await mongoose.connect(process.env.MONGO_URI); 
     console.log("✅ Connected to MongoDB");
 
-  
     app.use('/api/news', require('./routes/news'));
     app.use('/api/items', require('./routes/items'));
     app.use('/api/ops', require('./routes/ops'));
