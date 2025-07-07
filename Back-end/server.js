@@ -6,9 +6,8 @@ require("dotenv").config();
 
 const app = express();
 
-
 app.use(cors({
-  origin: "https://jetwiki.vercel.app", 
+  origin: "https://jetwiki.vercel.app",
   methods: ["GET", "POST"],
   credentials: true
 }));
@@ -16,32 +15,30 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use("/images", express.static('public/images'));
 
-
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log("Connected to MongoDB"))
-.catch(err => console.error("MongoDB connection error:", err));
-
-const newsRoute = require('./routes/news');
-app.use('/api/news', newsRoute);
-
-const itemsRoute = require('./routes/items');
-app.use('/api/items', itemsRoute);
-
-const opsroute = require('./routes/ops');
-app.use('/api/ops', opsroute);
-
-const incomeroute = require('./routes/income');
-app.use('/api/income', incomeroute);
-
-const girlroute = require("./routes/girls");
-app.use('/api/girls', girlroute);
-
 app.get("/api/test", (req, res) => {
   res.json({ message: "Backend is working!" });
 });
 
+async function startServer() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log("✅ Connected to MongoDB");
+
+  
+    app.use('/api/news', require('./routes/news'));
+    app.use('/api/items', require('./routes/items'));
+    app.use('/api/ops', require('./routes/ops'));
+    app.use('/api/income', require('./routes/income'));
+    app.use('/api/girls', require('./routes/girls'));
+
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
+}
+
+startServer();
 
 module.exports = app;
