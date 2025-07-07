@@ -19,6 +19,10 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/dist/$1",
       "headers": {
