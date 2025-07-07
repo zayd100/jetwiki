@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 // Import all models
-const Connection = require("../models/ops");
-const Item = require("../models/item");
-const Income = require("../models/income");
-const girl = require("../models/girls");
+const Connection = require("./models/ops");
+const Item = require("./models/item");
+const Income = require("./models/income");
+const girl = require("./models/girls");
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -552,8 +552,7 @@ const connectionData = [
     await Income.insertMany(incomeData);
     console.log("✅ Income data seeded!");
     
-    await news.insertMany(newsdata);
-    console.log("✅ News data seeded!");
+
 
     await girl.insertMany(girlData);
     console.log("✅ girl data seeded!");
