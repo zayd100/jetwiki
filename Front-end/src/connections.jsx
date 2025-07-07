@@ -36,7 +36,7 @@ const [searchQuery, setSearchQuery] = useState("");
     item.headquarters.toLowerCase().includes(searchQuery.toLowerCase())||
     item.notableproject.toLowerCase().includes(searchQuery.toLowerCase())
 )
-//The above code is important when sorting logic is implemented make sure to .filter the one used in usestate or else it will not work. 
+
 
 );
      const handleSearchChange = (event) => {

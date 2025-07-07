@@ -37,7 +37,7 @@ const undoLastCard = async () => {
 
     const response = await axios.delete(`/api/girls/${lastAddedCard._id}`);
     
-    // Update local state by filtering out the deleted card
+ 
     setSortedCards(prevCards => prevCards.filter(card => card._id !== lastAddedCard._id));
     setLastAddedCard(null);
     alert(`Card "${response.data.deletedGirl.jetname}" removed successfully`);
