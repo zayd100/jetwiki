@@ -47,5 +47,5 @@ const girlsSchema  = new mongoose.Schema({
 }, {
     timestamps: true
 })
-module.exports = mongoose.model("girl",girlsSchema);
+module.exports = mongoose.model("girls",girlsSchema);
 
