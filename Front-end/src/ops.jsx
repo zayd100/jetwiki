@@ -10,7 +10,7 @@ function Ops() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/ops")
+    axios.get("/api/ops")
       .then((res) => {
         console.log("Fetched from backend:", res.data);
         setSortedCards(res.data);

@@ -17,7 +17,7 @@ const [newConnection,setNewConnection] = useState({
 
 // Fetch data from backend
 useEffect(() => {
-  axios.get("http://localhost:5000/api/items")
+  axios.get("/api/items")
     .then((res) => {
          console.log("Fetched from backend:", res.data);
       setsorted(res.data);
@@ -63,7 +63,7 @@ const [searchQuery, setSearchQuery] = useState("");
         </div>
          <div className="cards-container">
          {filterconnections.map((item,index)=> (
-        <Connects key={index} {...item} image={`http://localhost:5000/images/${item.image}`}/>
+        <Connects key={index} {...item} image={`/images/${item.image}`}/>
         ))}
 
         </div>

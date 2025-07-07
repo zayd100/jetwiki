@@ -6,7 +6,17 @@ require("dotenv").config();
 
 const app = express();
 
-// Connect to MongoDB
+
+app.use(cors({
+  origin: "https://jetwiki.vercel.app", 
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
+app.use(bodyParser.json());
+app.use("/images", express.static('public/images'));
+
+
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -14,11 +24,9 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error("MongoDB connection error:", err));
 
-app.use(cors());
-app.use(bodyParser.json()); 
-app.use("/images", express.static('public/images'));
-const newsRoute = require('./routes/news'); // ✅ adjust path if needed
-app.use('/api/news', newsRoute);   
+const newsRoute = require('./routes/news');
+app.use('/api/news', newsRoute);
+
 const itemsRoute = require('./routes/items');
 app.use('/api/items', itemsRoute);
 
@@ -28,19 +36,12 @@ app.use('/api/ops', opsroute);
 const incomeroute = require('./routes/income');
 app.use('/api/income', incomeroute);
 
-
-
 const girlroute = require("./routes/girls");
-
-
-
-
 app.use('/api/girls', girlroute);
 
-
-
-
-const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`jet server is running on port ${PORT}`);
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is working!" });
 });
+
+
+module.exports = app;

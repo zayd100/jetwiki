@@ -9,7 +9,7 @@ function Cd() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortedCards, setSortedCards] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/girls")
+    axios.get("/api/girls")
     .then((res)=>{
       console.log("got it from the server: ", res.data);
         setSortedCards(res.data);
@@ -19,7 +19,7 @@ function Cd() {
 
   
   const showall= () =>{
-    axios.get("http://localhost:5000/api/girls")
+    axios.get("/api/girls")
     .then((res)=>{
       console.log("success, here are all cards: ", res.data);
       setSortedCards(res.data);
@@ -34,8 +34,8 @@ const undoLastCard = async () => {
   }
 
   try {
-    // Call backend to delete the last added card
-    const response = await axios.delete(`http://localhost:5000/api/girls/${lastAddedCard._id}`);
+
+    const response = await axios.delete(`/api/girls/${lastAddedCard._id}`);
     
     // Update local state by filtering out the deleted card
     setSortedCards(prevCards => prevCards.filter(card => card._id !== lastAddedCard._id));
@@ -156,14 +156,14 @@ const formSubmit = async (e) => {
   };
 
   try {
-    const res = await axios.post("http://localhost:5000/api/girls", cardToAdd);
+    const res = await axios.post("/api/girls", cardToAdd);
     console.log("Card successfully added:", res.data);
     
     // Store the last added card
     setLastAddedCard(res.data);
     
     // Update the cards list
-    const updated = await axios.get("http://localhost:5000/api/girls");
+    const updated = await axios.get("/api/girls");
     setSortedCards(updated.data);
 
     // Reset form
