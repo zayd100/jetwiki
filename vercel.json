@@ -2,29 +2,29 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/vite.config.js",
+      "src": "front-end/vite.config.js",
       "use": "@vercel/vite",
       "config": {
-        "distDir": "frontend/dist"
+        "distDir": "front-end/dist"
       }
     },
     {
-      "src": "backend/server.js",
+      "src": "back-end/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/server.js"
+      "dest": "/back-end/server.js"
     },
     {
       "src": "/images/(.*)",
-      "dest": "/backend/server.js"
+      "dest": "/back-end/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/$1",
+      "dest": "/front-end/dist/index.html",
       "headers": {
         "Cache-Control": "public, max-age=0, must-revalidate"
       }
