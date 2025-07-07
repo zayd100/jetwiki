@@ -9,15 +9,24 @@
       "src": "Front-end/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "Front-end/dist",
-        "installCommand": "cd Front-end && npm install",
-        "buildCommand": "cd Front-end && npm run build"
+        "distDir": "dist",
+        "installCommand": "npm install",
+        "buildCommand": "npm run build"
       }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "Back-end/server.js" },
-    { "src": "/assets/(.*)", "dest": "Front-end/dist/assets/$1" },
-    { "src": "/(.*)", "dest": "Front-end/dist/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "Back-end/server.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "Front-end/dist/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Front-end/dist/index.html"
+    }
   ]
 }
