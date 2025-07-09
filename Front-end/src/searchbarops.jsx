@@ -9,15 +9,7 @@ const OpBar = ({value,onChange})  => {
             placeholder="Search Operations"
             value={value}
             onChange={onChange}
-            
-            
-            
             />
-
-
-
-
-
 
         </div>
 
