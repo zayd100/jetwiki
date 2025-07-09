@@ -24,17 +24,17 @@ git clone https://github.com/zayd100/jetwiki.git
 cd jetwiki
 
 # Install backend dependencies
-cd backend
+cd Back-end
 npm install
 
 # Install frontend dependencies
-cd ../client
+cd ../Front-end
 npm install
 ```
 
 ### 2. Environment Setup
 
-Create a `.env` file in the `backend/` directory:
+Create a `.env` file in the `Back-end/` directory:
 
 ```env
 MONGO_URI=mongodb://127.0.0.1:27017/jetwiki
@@ -47,14 +47,14 @@ PORT=5000
 
 **Backend Server** (Terminal 1):
 ```bash
-cd backend
+cd Back-end
 node server.js
 ```
 Server runs on: `http://localhost:5000`
 
 **Frontend Server** (Terminal 2):
 ```bash
-cd client
+cd Front-end
 npm run dev
 ```
 Frontend runs on: `http://localhost:5173`
@@ -74,7 +74,7 @@ Expected API response:
 Populate your database with sample jets, operations, and company data:
 
 ```bash
-cd backend
+cd Back-end
 node seed.js
 ```
 
@@ -82,11 +82,11 @@ node seed.js
 
 ```
 jetwiki/
-├── client/                 # React frontend
+├── Front-end/                 # React frontend
 │   ├── src/
 │   ├── package.json
 │   └── vite.config.js
-├── backend/               # Node.js backend
+├── Back-end/               # Node.js backend
 │   ├── models/           # MongoDB models
 │   ├── routes/           # API routes
 │   ├── server.js         # Main server file
