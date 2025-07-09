@@ -10,9 +10,8 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application template showca
 - **Clean Architecture**: Modular and well-organized codebase
 - **Ready to Deploy**: Easy setup with environment configuration
 
-## 🚀 Use This Template
 
-Feel free to use this repository as a template for your own MERN stack projects! Simply fork it or use GitHub's "Use this template" button to get started.
+![jw](Front-end/src/assets/jet.png)
 
 ## 🛠️ Quick Start
 
@@ -77,7 +76,7 @@ Populate your database with sample jets, operations, and company data:
 cd Back-end
 node seed.js
 ```
-![jw](Front-end/src/assets/jet.png)
+
 
 ## 🏗️ Project Structure
 
