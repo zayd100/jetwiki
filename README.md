@@ -77,6 +77,7 @@ Populate your database with sample jets, operations, and company data:
 cd Back-end
 node seed.js
 ```
+![jw](jetwiki.png)
 
 ## 🏗️ Project Structure
 
