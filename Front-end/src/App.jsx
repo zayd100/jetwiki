@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 import Home from "./home";
 import Ops from "./ops";
 import Connections from "./connections";
-import About from "./about";
+
 
 
 
@@ -19,7 +19,7 @@ function App(){
         <Route path = "/ops" element = {<Ops />}/>
         <Route path = "/connections" element = {<Connections/>}/>
      
-        <Route path = "/about" element={<About/>}/>
+      
        
  
           </Routes>

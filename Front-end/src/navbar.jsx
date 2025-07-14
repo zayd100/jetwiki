@@ -8,7 +8,7 @@ function Navbar(){
                 <li><Link to="/cardsdata">Jets</Link></li>
                <li><Link to ="/ops">Operations</Link></li>
                <li><Link to = "/connections">Defense Contractors</Link></li>
-                <li><Link to= "/about">About JetWiki</Link></li>
+                
             </ul>
         </nav>
     );
