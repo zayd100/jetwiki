@@ -11,7 +11,11 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application template showca
 - **Ready to Deploy**: Easy setup with environment configuration
 
 
-![jw](Front-end/src/assets/jet.png)
+![jw](Front-end/src/assets/home.png)
+![jww](preview-images/jet.png)
+![jww](preview-images/upload.png)
+![jww](preview-images/defense.png)
+![jww](preview-images/ops.png)
 
 ## 🛠️ Quick Start
 
