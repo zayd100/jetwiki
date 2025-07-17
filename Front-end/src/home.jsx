@@ -1,13 +1,13 @@
 import React from 'react';
 
-import logo from './assets/lun.png';
+
 
 const Home = () => {
   return (
     <div className="landing-container">
       {}
       <header className="landing-header">
-        <img src={logo} alt="Jet Wiki Logo" className="logo" />
+      
         <h1>JET WIKI</h1>
         <p className="tagline">The ultimate resource for military aviation enthusiasts</p>
       </header>
