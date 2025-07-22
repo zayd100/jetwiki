@@ -17,9 +17,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const newIncome = new Income(req.body);
-
         const savedIncome = await newIncome.save();
-        
         res.status(201).json(savedIncome);
     } catch (error) {
 
@@ -36,7 +34,7 @@ router.delete("/:id", async (req, res) => {
         res.json({ success: true });
 
     } catch (error) {
-
+    
         res.status(500).json({ error: error.message });
     }
 });

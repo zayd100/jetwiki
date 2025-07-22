@@ -544,22 +544,22 @@ const connectionData = [
 
     // Seed all collections
     await Connection.insertMany(connectionData);
-    console.log("✅ Connection data seeded!");
+    console.log("Initial data seeded!");
     
     await Item.insertMany(itemData);
-    console.log("✅ Item data seeded!");
+    console.log("Operation data seeded!");
     
     await Income.insertMany(incomeData);
-    console.log("✅ Income data seeded!");
+    console.log("More data seeded!");
     
 
 
     await girl.insertMany(girlData);
-    console.log("✅ girl data seeded!");
-    console.log("🎉 All data seeded successfully!");
+    console.log("Jets data seeded!");
+    console.log("All data seeded successfully!");
     mongoose.disconnect();
   } catch (error) {
-    console.error("❌ Seeding error:", error);
+    console.error("Error Seeding with Jet info!", error);
     mongoose.disconnect();
   }
 };
