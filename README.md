@@ -1,5 +1,7 @@
 # JetWiki – MERN Stack Template
 
+//I have to figure out hosting and more on CRUD operations
+
 A full-stack MERN (MongoDB, Express, React, Node.js) application template showcasing historical air combat operations, jets, and defense companies. Perfect for learning full-stack development or as a starting point for your own projects.
 
 ## ✨ Features
