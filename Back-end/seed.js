@@ -80,6 +80,16 @@ const connectionData = [
     "Fouga Magister", "Nord Noratlas"
   ],
     op_status: "completed"
+  },
+  {
+    op_name: "Operation Bunyan Al Marsoos",
+    op_year: 1967,
+    op_goal: "Operation Bunyan al Marsoos was Pakistan’s May 2025 military campaign launched in response to Indian strikes, targeting key Indian airbases and missile sites to defend national sovereignty",
+    image : "hafiz.png",
+    jets_used:  [
+    "F-16", "JF-17 thunder", "J10C"
+  ],
+    op_status: "completed"
   }
 ];
 

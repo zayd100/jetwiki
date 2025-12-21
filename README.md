@@ -115,6 +115,7 @@ This is an open template! Feel free to:
 - Submit issues or improvements
 - Use as a learning resource
 - Build something amazing on top of it
+- 
 
 ## 📝 License
 

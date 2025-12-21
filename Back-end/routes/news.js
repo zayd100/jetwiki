@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const News = require("../models/news"); // ✅ Use proper model name
+const News = require("../models/news"); // the model name that i had
 
 router.get("/", async (req, res) => {
   try {

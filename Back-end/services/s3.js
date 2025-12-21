@@ -16,7 +16,7 @@ const uploadtobucket = async(bucketname, filekey, data)=>{
         Key: filekey,
         Body: JSON.stringify(data),
         ContentType: 'application/json'
-
+        
     };
     
     try{
