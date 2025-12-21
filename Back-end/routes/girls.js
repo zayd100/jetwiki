@@ -18,13 +18,15 @@ router.post("/", async (req, res) => {
     console.log("📨 Incoming POST data:", req.body); // Log the received data
     const newGirl = new girls(req.body);
     const saved = await newGirl.save();
+    /*
     const s3url = await uploadtobucket(  //save to bucket!
       'your-bucket-name', 
       `jets/${Date.now()}.json`, 
       newGirl
     ).catch(s3Error => {
   console.error("S3 Upload Failed:", s3Error);
-  }) 
+  })
+  */ 
     res.status(201).json(saved);
   } catch (error) {
     console.error("❌ Failed to save:", error);
