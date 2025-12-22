@@ -12,7 +12,10 @@ app.use(cors({
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 }));
-app.use(bodyParser.json());
+// Increase body size limit to 10mb (adjust as needed)
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
+
 app.use("/images", express.static("public/images"));
 
 // MongoDB connection

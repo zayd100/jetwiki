@@ -204,20 +204,31 @@ const formSubmit = async (e) => {
         <button className="abd" onClick= {mostskin}>Lightest</button>
         <button className="abd" onClick={fivestar}>5 star</button>
         <button className="abd" onClick={showall} >All Jets</button>
-        <div className="future-cards-container">
-          {filteredCards.map((card, index) => (
-            <Card key={index} {...card} image={`http://localhost:5000/images/${card.image}`}   />
-          ))}
-        </div>
+    <div className="future-cards-container">
+  {filteredCards.map((card, index) => (
+    <Card
+      key={index}
+      {...card}
+      image={
+        card.image.startsWith("data:image")
+          ? card.image // base64 string
+          : `http://localhost:5000/images/${card.image}` // filename served from backend
+      }
+    />
+  ))}
+</div>
+
        <form onSubmit={formSubmit}>
 <div className="form-container">
-  <div className="modern-file-input">
-    <input
-      type="file"
-      accept="image/*"
-      onChange={(e) => handleImageUpload(e)}
-    />
-  </div>
+<label className="modern-file-input">
+  Choose Image
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleImageUpload}
+    style={{ display: "none" }}
+  />
+</label>
   
   <input className="modern-input" type="text" placeholder="Name" value={newcard.jetname} onChange={(e)=> setnewcard({...newcard, jetname: e.target.value})} />
   <input className="modern-input" type="text" placeholder="Headline:" value={newcard.pse} onChange={(e)=> setnewcard({...newcard, pse: e.target.value})} />
