@@ -35,6 +35,7 @@ app.use('/api/items', require('./routes/items'));
 app.use('/api/ops', require('./routes/ops'));
 app.use('/api/income', require('./routes/income'));
 app.use('/api/girls', require('./routes/girls'));
+app.use('/api/bases', require('./routes/bases'));
 
 
 // Run the server

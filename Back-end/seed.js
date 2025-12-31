@@ -7,6 +7,7 @@ const Connection = require("./models/ops");
 const Item = require("./models/item");
 const Income = require("./models/income");
 const girl = require("./models/girls");
+const bases = require("./models/bases");
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -20,8 +21,20 @@ const seedAll = async () => {
     await Item.deleteMany({});
     await Income.deleteMany({});
     await girl.deleteMany({});
+    await bases.deleteMany({});
    
     // Connection data (your existing ops data)
+
+    const basesdata = [
+      {
+        location: "karachi base",
+        year:1991
+      },
+      {
+        location:"delhi base",
+        year:1990
+      }
+    ]
 const connectionData = [
   
   {
@@ -566,6 +579,9 @@ const connectionData = [
 
     await girl.insertMany(girlData);
     console.log("Jets data seeded!");
+
+    await bases.insertMany(basesdata);
+    console.log("bases data updated!");
     console.log("All data seeded successfully!");
     mongoose.disconnect();
   } catch (error) {
