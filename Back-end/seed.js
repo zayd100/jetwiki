@@ -27,11 +27,13 @@ const seedAll = async () => {
 
     const basesdata = [
       {
-        location: "karachi base",
+        location:"PK",
+        city: "karachi base",
         year:1991
       },
       {
-        location:"delhi base",
+        location:"IND",
+        city:"delhi base",
         year:1990
       }
     ]
