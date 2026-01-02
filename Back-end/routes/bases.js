@@ -23,5 +23,16 @@ try{
 }
 
 });
-
+router.delete("/:id", async(req,res)=>{
+    try{
+        const deletedBase = await bases.findByIdAndDelete(req.params.id)
+    if(!deletedBase){
+        return res.status(404).json({message:"not found"});
+    }
+    res.json({message:"deleted base!", deletedBase});
+    } catch(error){
+        console.error("failed to delete the base", error);
+        res.status(500).json({message:"error deleting card",error});
+    }
+});
 module.exports = router;

@@ -29,5 +29,5 @@ const connectionSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// ✅ Prevent OverwriteModelError
+
 module.exports = mongoose.models.Connection || mongoose.model('Connection', connectionSchema);

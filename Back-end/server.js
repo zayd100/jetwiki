@@ -8,15 +8,16 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // or remove this if no frontend
+  origin: "http://localhost:5173", 
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 }));
-// Increase body size limit to 10mb (adjust as needed)
+// Increase body size limit to 10mb 
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use("/images", express.static("public/images"));
+
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -38,7 +39,7 @@ app.use('/api/girls', require('./routes/girls'));
 app.use('/api/bases', require('./routes/bases'));
 
 
-// Run the server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

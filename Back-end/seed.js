@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// Import all models
+// Importing my models
 const Connection = require("./models/ops");
 const Item = require("./models/item");
 const Income = require("./models/income");
@@ -16,14 +16,12 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const seedAll = async () => {
   try {
-    // Clear existing data (optional)
     await Connection.deleteMany({});
     await Item.deleteMany({});
     await Income.deleteMany({});
     await girl.deleteMany({});
     await bases.deleteMany({});
    
-    // Connection data (your existing ops data)
 
     const basesdata = [
       {
@@ -109,7 +107,7 @@ const connectionData = [
 ];
 
 
-    // Item data (your existing contacts/people data)
+    
     const itemData =  [
   { 
     name: "Lockheed Martin", 
@@ -560,7 +558,6 @@ const connectionData = [
 ];
 
 
-    // Income data (your existing income data)
     const incomeData = [
       { type: "Web 3", amount: 3000, curve: 4 },
       { type: "Marketing", amount: 2000, curve: 2 },
