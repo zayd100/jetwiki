@@ -3,6 +3,7 @@ import Cd from "./cardsdata";
 import Navbar from "./navbar";
 import Home from "./home";
 import Ops from "./ops";
+import Pilotd from "./pilotdata";
 import Connections from "./connections";
 
 
@@ -18,10 +19,7 @@ function App(){
         <Route path = "/cardsdata" element = {<Cd />}/>
         <Route path = "/ops" element = {<Ops />}/>
         <Route path = "/connections" element = {<Connections/>}/>
-     
-      
-       
- 
+        <Route path = "/pilotdata" element = {<Pilotd/>}/>
           </Routes>
 
         </Router>

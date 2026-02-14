@@ -37,7 +37,7 @@ app.use('/api/ops', require('./routes/ops'));
 app.use('/api/income', require('./routes/income'));
 app.use('/api/girls', require('./routes/girls'));
 app.use('/api/bases', require('./routes/bases'));
-
+app.use('/api/pilots',require('./routes/pilots'));
 
 
 const PORT = process.env.PORT || 5000;

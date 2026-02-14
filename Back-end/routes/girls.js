@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const girls = require("../models/girls");
-const {uploadtobucket} = require('../services/s3')
+
 
 router.get("/", async (req, res) => {
   try {

@@ -10,9 +10,7 @@ const Operationdata = ({op_name, op_year, op_goal, op_status, jets_used = [],ima
                 <h2 className="op-card-head">{op_name}</h2>
                 <p className="op-card-text">{op_year}</p>
                 <p className="op-card-detail">{op_goal}</p>
-                
                 <div className="jets_container">
-                 
                     {jets_used.map((jet, index) => (
                         <span key={index} className="jet-badge">{jet}</span>
                     ))}
@@ -30,5 +28,6 @@ Operationdata.propTypes = {
     op_status: PropTypes.string.isRequired,
     jets_used: PropTypes.arrayOf(PropTypes.string)
 };
+
 
 export default Operationdata;

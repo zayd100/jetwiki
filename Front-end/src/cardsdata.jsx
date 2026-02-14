@@ -250,8 +250,6 @@ const formSubmit = async (e) => {
     <button className="modern-btn" onClick={undoLastCard}>Undo Last</button>
 </div>
         </form>
-
-       
       </div>
     </div>
   );

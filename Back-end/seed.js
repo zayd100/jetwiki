@@ -8,7 +8,7 @@ const Item = require("./models/item");
 const Income = require("./models/income");
 const girl = require("./models/girls");
 const bases = require("./models/bases");
-
+const pilots = require("./models/pilots");
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -21,7 +21,7 @@ const seedAll = async () => {
     await Income.deleteMany({});
     await girl.deleteMany({});
     await bases.deleteMany({});
-   
+    await pilots.deleteMany({});
 
     const basesdata = [
       {
@@ -564,10 +564,85 @@ const connectionData = [
       { type: "Cloud Computing", amount: 3000, curve: 3 }
     ];
 
+    //new model and route for pilot, seed here!xoxo
+    const pilotData = [
+     {
+    name: "Muhammad Mahmood Alam",
+    status: "Deceased",
+    country: "Pakistan",
+    kills: 9,
+    awards: "Sitara-e-Jurat"
+  },
+  {
+    name: "Erich Hartmann",
+    status: "Deceased",
+    country: "Germany",
+    kills: 352,
+    awards: "Knight's Cross of the Iron Cross"
+  },
+  {
+    name: "Chuck Yeager",
+    status: "Deceased",
+    country: "United States",
+    kills: 11,
+    awards: "Distinguished Service Medal"
+  },
+  {
+    name: "Adolf Galland",
+    status: "Deceased",
+    country: "Germany",
+    kills: 104,
+    awards: "Knight's Cross with Oak Leaves"
+  },
+  {
+    name: "Douglas Bader",
+    status: "Deceased",
+    country: "United Kingdom",
+    kills: 22,
+    awards: "Distinguished Service Order"
+  },
+  {
+    name: "Indra Lal Roy",
+    status: "Deceased",
+    country: "India",
+    kills: 10,
+    awards: "Distinguished Flying Cross"
+  },
+  {
+    name: "Richard Bong",
+    status: "Deceased",
+    country: "United States",
+    kills: 40,
+    awards: "Medal of Honor"
+  },
+  {
+    name: "James Jabara",
+    status: "Deceased",
+    country: "United States",
+    kills: 15,
+    awards: "Distinguished Service Cross"
+  },
+  {
+    name: "Colin Gray",
+    status: "Deceased",
+    country: "New Zealand",
+    kills: 27,
+    awards: "Distinguished Service Order"
+  },
+  {
+    name: "Saeed Anwar",
+    status: "Retired",
+    country: "Pakistan",
+    kills: 5,
+    awards: "Tamgha-e-Basalat"
+  }
+    ]
     // Seed all collections
+  
     await Connection.insertMany(connectionData);
     console.log("Initial data seeded!");
-    
+    await pilots.insertMany(pilotData);
+    console.log('Pilots data seeded!');  
     await Item.insertMany(itemData);
     console.log("Operation data seeded!");
     
