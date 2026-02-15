@@ -5,6 +5,7 @@ status:{type: String, required:true},
 country:{type:String, required:true},
 kills:{type: Number, required:false},
 awards:{type: String, required:false},
+image:{type: String, required:true},
 
 
 }, {timestamps: true})

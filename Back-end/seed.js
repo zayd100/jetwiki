@@ -571,71 +571,74 @@ const connectionData = [
     status: "Deceased",
     country: "Pakistan",
     kills: 9,
-    awards: "Sitara-e-Jurat"
+    awards: "Sitara-e-Jurat",
+    image: "mm.jpg"
   },
   {
     name: "Erich Hartmann",
     status: "Deceased",
     country: "Germany",
     kills: 352,
-    awards: "Knight's Cross of the Iron Cross"
+    awards: "Knight's Cross of the Iron Cross",
+    image: "erich.jpg"
   },
   {
     name: "Chuck Yeager",
     status: "Deceased",
     country: "United States",
     kills: 11,
-    awards: "Distinguished Service Medal"
+    awards: "Distinguished Service Medal",
+    image: "chuck.jpg"
   },
   {
     name: "Adolf Galland",
     status: "Deceased",
     country: "Germany",
     kills: 104,
-    awards: "Knight's Cross with Oak Leaves"
+    awards: "Knight's Cross with Oak Leaves",
+    image: "adolf.jpg"
   },
   {
     name: "Douglas Bader",
     status: "Deceased",
     country: "United Kingdom",
     kills: 22,
-    awards: "Distinguished Service Order"
+    awards: "Distinguished Service Order",
+    image: "douglas.jpg"
   },
   {
     name: "Indra Lal Roy",
     status: "Deceased",
     country: "India",
     kills: 10,
-    awards: "Distinguished Flying Cross"
+    awards: "Distinguished Flying Cross",
+    image: "indra.jpg"
   },
   {
     name: "Richard Bong",
     status: "Deceased",
     country: "United States",
     kills: 40,
-    awards: "Medal of Honor"
+    awards: "Medal of Honor",
+    image: "richard.jpg"
   },
   {
     name: "James Jabara",
     status: "Deceased",
     country: "United States",
     kills: 15,
-    awards: "Distinguished Service Cross"
+    awards: "Distinguished Service Cross",
+    image: "james.jpg"
   },
   {
     name: "Colin Gray",
     status: "Deceased",
     country: "New Zealand",
     kills: 27,
-    awards: "Distinguished Service Order"
+    awards: "Distinguished Service Order",
+    image: "colin.jpg"
   },
-  {
-    name: "Saeed Anwar",
-    status: "Retired",
-    country: "Pakistan",
-    kills: 5,
-    awards: "Tamgha-e-Basalat"
-  }
+  
     ]
     // Seed all collections
   

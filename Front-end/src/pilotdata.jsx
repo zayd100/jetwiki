@@ -32,27 +32,20 @@ const sortkills = () => {
     setsortedcards(sortedkills);
 }
 return (
-    <div className="app-container">
+    <div>
+    <div className="">
         <button className="abd" onClick={showall}> Show all</button>
         <button className="abd" onClick={sortkills}>Sort by Most kills</button>
-        <div className="future-cards-contianer">
+        <div className="cards-container">
             {sortedcards.map((card,index)=>(
             <CardP
             key={index}
             {...card}
+            image = {`http://localhost:5000/images/${card.image}`}
             />
 ))}
         </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    </div>
     </div>
 
 
